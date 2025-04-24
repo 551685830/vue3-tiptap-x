@@ -91,7 +91,7 @@ const toolbars: OptionProps[] = reactive(
 
 .toolbar::before {
 	bottom: 0;
-	background-color: var(--main-primary-border);
+	/* background-color: var(--main-primary-border); */
 	content: "";
 	height: 1px;
 	left: 0;

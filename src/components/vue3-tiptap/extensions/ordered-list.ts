@@ -27,7 +27,8 @@ const CustomOrderedList = OrderedList.extend<OrderedListOptions>({
 		return {
 			orderedStyle: {
 				default: this.options.defaultStyle,
-				parseHTML: element => element.getAttribute("data-ordered-style"),
+				// parseHTML: element => element.getAttribute("data-ordered-style"),
+				parseHTML: element => element.dataset.orderedStyle,
 				renderHTML: (attributes: OrderedListAttributes) => ({
 					"data-ordered-style": attributes.orderedStyle || this.options.defaultStyle
 				})

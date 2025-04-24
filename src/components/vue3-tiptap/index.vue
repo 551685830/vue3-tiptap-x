@@ -119,6 +119,5 @@ onMounted(() => {
 	border: 1px solid var(--main-primary-border);
 	overflow: hidden;
 	border-radius: 5px;
-	background-color: #fff;
 }
 </style>

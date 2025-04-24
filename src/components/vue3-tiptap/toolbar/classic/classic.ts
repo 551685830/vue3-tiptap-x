@@ -7,4 +7,5 @@ export interface OptionProps {
 	click: () => void;
 	dblclick?: () => void;
 	active: boolean;
+	disabled?: boolean;
 }

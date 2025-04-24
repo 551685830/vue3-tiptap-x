@@ -28,7 +28,8 @@ export const createToolbarOptions = (
 		click() {
 			editor.chain().focus().undo().run();
 		},
-		active: false
+		active: false,
+		disabled: true,
 	},
 	{
 		name: "RedoOutlined",
@@ -37,7 +38,8 @@ export const createToolbarOptions = (
 		click() {
 			editor.chain().focus().redo().run();
 		},
-		active: false
+		active: false,
+		disabled: true,
 	},
 	{
 		name: "DeleteOutlined",
@@ -46,7 +48,9 @@ export const createToolbarOptions = (
 		click() {
 			editor.chain().focus().clearNodes().unsetAllMarks().run();
 		},
-		active: false
+		active: false,
+		disabled: true,
+
 	},
 	{
 		name: "bold",
@@ -55,7 +59,9 @@ export const createToolbarOptions = (
 			editor.chain().focus().toggleBold().run();
 		},
 		tip: "粗体",
-		active: false
+		active: false,
+		disabled: true,
+
 	},
 	{
 		name: "underline",
@@ -64,7 +70,8 @@ export const createToolbarOptions = (
 			editor.chain().focus().toggleUnderline().run();
 		},
 		tip: "下划线",
-		active: false
+		active: false,
+		disabled: true,
 	},
 	{
 		name: "strike",
@@ -73,7 +80,9 @@ export const createToolbarOptions = (
 			editor.chain().focus().toggleStrike().run();
 		},
 		tip: "删除线",
-		active: false
+		active: false,
+		disabled: true,
+
 	},
 	{
 		name: "italic",
@@ -82,7 +91,8 @@ export const createToolbarOptions = (
 		click() {
 			editor.chain().focus().toggleItalic().run();
 		},
-		active: false
+		active: false,
+		disabled: true,
 	},
 	{
 		name: "MinusOutlined",
@@ -91,7 +101,8 @@ export const createToolbarOptions = (
 		click() {
 			editor.chain().focus().setHorizontalRule().run();
 		},
-		active: false
+		active: false,
+		disabled: true,
 	},
 	{
 		name: "MenuUnfoldOutlined",
@@ -100,7 +111,8 @@ export const createToolbarOptions = (
 		click() {
 			editor.chain().focus().indent().run();
 		},
-		active: false
+		active: false,
+		disabled: true,
 	},
 	{
 		name: "MenuFoldOutlined",
@@ -109,6 +121,7 @@ export const createToolbarOptions = (
 		click() {
 			editor.chain().focus().outdent().run();
 		},
+		disabled: true,
 		active: false
 	},
 	{
@@ -118,6 +131,7 @@ export const createToolbarOptions = (
 			editor.chain().focus().toggleBlockquote().run();
 		},
 		tip: "引用",
+		disabled: true,
 		active: false
 	},
 	{
@@ -127,6 +141,7 @@ export const createToolbarOptions = (
 			editor.chain().focus().toggleCodeBlock().run();
 		},
 		tip: "代码块",
+		disabled: true,
 		active: false
 	},
 	{
@@ -137,6 +152,7 @@ export const createToolbarOptions = (
 			const { toggleModal } = methods[this.name];
 			toggleModal();
 		},
+		disabled: true,
 		active: false
 	},
 	{
@@ -146,6 +162,7 @@ export const createToolbarOptions = (
 		click() {
 			editor.chain().focus().extendMarkRange("link").unsetLink().run();
 		},
+		disabled: true,
 		active: false
 	}
 ];

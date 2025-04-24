@@ -1,5 +1,5 @@
 <template>
-	<a-tooltip placement="top" :show-after="200">
+	<a-tooltip v-if="!option.disabled" placement="top" :show-after="200">
 		<template #title>
 			<span>{{ option.tip }}</span>
 		</template>

@@ -21,7 +21,8 @@ const CustomBulletList = BulletList.extend<BulletListType>({
 		return {
 			bulletStyle: {
 				default: this.options.defaultStyle,
-				parseHTML: element => element.getAttribute("data-bullet-style"),
+				// parseHTML: element => element.getAttribute("data-bullet-style"),
+				parseHTML: element => element.dataset.bulletStyle,
 				renderHTML: attributes => {
 					return {
 						"data-bullet-style": attributes.bulletStyle || this.options.defaultStyle
