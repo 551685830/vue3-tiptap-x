@@ -1,22 +1,20 @@
-import { OrderedList } from "@tiptap/extension-ordered-list";
+import type { OrderedListOptions as TiptapOrderedListOptions } from "@tiptap/extension-ordered-list";
 
-// 定义扩展选项接口
-interface OrderedListOptions {
+import { OrderedList as TiptapOrderedList } from "@tiptap/extension-ordered-list";
+
+interface CustomOrderedListOptions extends Partial<TiptapOrderedListOptions> {
 	defaultStyle: string;
-	keepAttributes?: boolean;
-	keepMarks?: boolean;
 	itemTypeName: string;
 }
 
-// 定义属性接口
-interface OrderedListAttributes {
+interface CustomOrderedListAttributes {
 	orderedStyle: string;
 }
 
 const ListItemName = "listItem";
 const TextStyleName = "textStyle";
 
-const CustomOrderedList = OrderedList.extend<OrderedListOptions>({
+const CustomOrderedList = TiptapOrderedList.extend<CustomOrderedListOptions>({
 	addOptions() {
 		return {
 			...this.parent?.(),
@@ -27,9 +25,8 @@ const CustomOrderedList = OrderedList.extend<OrderedListOptions>({
 		return {
 			orderedStyle: {
 				default: this.options.defaultStyle,
-				// parseHTML: element => element.getAttribute("data-ordered-style"),
-				parseHTML: element => element.dataset.orderedStyle,
-				renderHTML: (attributes: OrderedListAttributes) => ({
+				parseHTML: element => element.dataset.orderedStyle, // element => element.getAttribute("data-ordered-style")
+				renderHTML: (attributes: CustomOrderedListAttributes) => ({
 					"data-ordered-style": attributes.orderedStyle || this.options.defaultStyle
 				})
 			}
